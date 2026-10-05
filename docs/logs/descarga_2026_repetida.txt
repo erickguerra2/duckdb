@@ -1,0 +1,43 @@
+
+=== YELLOW 2026 ===
+  2026-01  ya existe, se omite
+  2026-02  ya existe, se omite
+  2026-03  ya existe, se omite
+  2026-04  ya existe, se omite
+  2026-05  ya existe, se omite
+  2026-06  ya existe, se omite
+  2026-07  ya existe, se omite
+  2026-08  ya existe, se omite
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+
+=== GREEN 2026 ===
+  2026-01  ya existe, se omite
+  2026-02  ya existe, se omite
+  2026-03  ya existe, se omite
+  2026-04  ya existe, se omite
+  2026-05  ya existe, se omite
+  2026-06  ya existe, se omite
+  2026-07  ya existe, se omite
+  2026-08  ya existe, se omite
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+
+Zonas: data/raw/zones/taxi_zone_lookup.csv ya existe, se omite
+
+Validando archivos locales...
+
+============================================================
+RESUMEN
+============================================================
+  anios         : 2026
+  descargados   : 0
+  ya existian   : 16
+  no publicados : 4
+      yellow 2026-09, yellow 2026-10, green 2026-09, green 2026-10
+  fallidos      : 0
+  archivos locales validados : 16
+  registros totales          : 30,040,469
+  archivos con problemas     : 0
+  manifiesto                 : docs/manifest_descargas.csv
+============================================================

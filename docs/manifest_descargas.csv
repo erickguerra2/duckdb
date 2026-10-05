@@ -1,0 +1,17 @@
+tipo,anio,mes,archivo,bytes_local,bytes_servidor,tamanio_ok,parquet_legible,registros,columnas
+yellow,2026,1,data/raw/yellow/2026/yellow_tripdata_2026-01.parquet,64165080,64165080,True,True,3724889,20
+yellow,2026,2,data/raw/yellow/2026/yellow_tripdata_2026-02.parquet,58683353,58683353,True,True,3399866,20
+yellow,2026,3,data/raw/yellow/2026/yellow_tripdata_2026-03.parquet,67891249,67891249,True,True,3952451,20
+yellow,2026,4,data/raw/yellow/2026/yellow_tripdata_2026-04.parquet,64818115,64818115,True,True,3831240,20
+yellow,2026,5,data/raw/yellow/2026/yellow_tripdata_2026-05.parquet,69699174,69699174,True,True,4090836,20
+yellow,2026,6,data/raw/yellow/2026/yellow_tripdata_2026-06.parquet,65465637,65465637,True,True,3837248,21
+yellow,2026,7,data/raw/yellow/2026/yellow_tripdata_2026-07.parquet,61685033,61685033,True,True,3530109,21
+yellow,2026,8,data/raw/yellow/2026/yellow_tripdata_2026-08.parquet,59043961,59043961,True,True,3336716,21
+green,2026,1,data/raw/green/2026/green_tripdata_2026-01.parquet,991656,991656,True,True,40272,21
+green,2026,2,data/raw/green/2026/green_tripdata_2026-02.parquet,920753,920753,True,True,37373,21
+green,2026,3,data/raw/green/2026/green_tripdata_2026-03.parquet,1082530,1082530,True,True,44208,21
+green,2026,4,data/raw/green/2026/green_tripdata_2026-04.parquet,1075896,1075896,True,True,44238,21
+green,2026,5,data/raw/green/2026/green_tripdata_2026-05.parquet,1102947,1102947,True,True,44921,21
+green,2026,6,data/raw/green/2026/green_tripdata_2026-06.parquet,1075836,1075836,True,True,44163,22
+green,2026,7,data/raw/green/2026/green_tripdata_2026-07.parquet,1018250,1018250,True,True,41252,22
+green,2026,8,data/raw/green/2026/green_tripdata_2026-08.parquet,1007530,1007530,True,True,40687,22

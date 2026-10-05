@@ -117,13 +117,63 @@ debe permitir que una persona que no participo en el desarrollo pueda levantar e
 ambiente, descargar los datos, ejecutar el analisis, reproducir los benchmarks y
 generar los resultados principales.
 
+Fork del equipo: https://github.com/erickguerra2/duckdb
+
 ## Como levantar el ambiente
 
-<!-- TODO (Ejercicio 1.5) -->
+Requisitos: Docker Desktop con Docker Compose, Git y al menos 10 GB libres. Se probó en Windows 11 con Docker 29.2.
+
+1. Clonar el fork y entrar a la carpeta:
+
+        git clone https://github.com/erickguerra2/duckdb.git
+        cd duckdb
+
+2. Construir y levantar los dos servicios en segundo plano. La primera vez tarda varios minutos:
+
+        docker compose up --build -d
+
+3. Verificar que ambos contenedores estén arriba y respondan:
+
+        docker compose ps
+        curl http://127.0.0.1:8888/lab
+        curl http://127.0.0.1:3000/api/health
+
+   La última respuesta debe ser {"status":"ok"}.
+
+Servicios disponibles:
+
+| Servicio | Contenedor | Dirección | Contenido |
+|---|---|---|---|
+| JupyterLab | lab8-lab | http://127.0.0.1:8888 | Python 3.11, DuckDB 1.5.5, pandas, pyarrow, matplotlib, requests |
+| Metabase | lab8-metabase | http://127.0.0.1:3000 | Metabase 0.63 con el driver de DuckDB 1.5.5 |
+
+Todos los comandos siguientes se ejecutan desde la raíz del repositorio. Los que empiezan con docker compose exec lab corren dentro del contenedor de análisis, donde la raíz está montada en /workspace. En Git Bash para Windows conviene anteponer MSYS_NO_PATHCONV=1 a los comandos que usan rutas como /workspace.
+
+Para detener el ambiente sin borrar nada:
+
+    docker compose stop
 
 ## Como descargar los datos
 
-<!-- TODO (Ejercicios 2.6, 5.1 y 8.1) -->
+El script scripts/download_data.py descarga los Parquet mensuales de taxis amarillos y verdes desde la TLC:
+
+    docker compose exec lab python scripts/download_data.py                  # solo 2026
+    docker compose exec lab python scripts/download_data.py --taxi green
+    docker compose exec lab python scripts/download_data.py --verificar      # valida sin descargar
+
+Los archivos quedan en data/raw/tipo/año/nombre-original.parquet y el catálogo de zonas en data/raw/zones/taxi_zone_lookup.csv. Los 16 archivos de 2026 ocupan unos 0.5 GB.
+
+Cambios realizados al script original:
+
+- El año dejó de ser una constante fija. Todas las funciones lo reciben como parámetro y el argumento --anio acepta uno o varios años.
+- En el año en curso solo se consultan los meses hasta la fecha actual.
+- Cada descarga compara los bytes recibidos con el Content-Length del servidor y se descarta si no coinciden.
+- Al terminar se valida cada archivo local: tamaño contra el servidor, lectura de metadatos Parquet, filas, columnas y huecos de meses intermedios.
+- El resultado de la validación se guarda en docs/manifest_descargas.csv.
+- Se descarga el catálogo de zonas de la TLC.
+- Se mantuvo la regla de no volver a descargar archivos existentes y la escritura atómica con archivo .part.
+
+Cómo se verifica que la descarga está completa: ningún mes publicado queda sin descargar, no hay meses faltantes en medio, todos los tamaños coinciden con el servidor y todos los archivos abren como Parquet. Las bitácoras de cada ejecución están en docs/logs. Con datos hasta agosto de 2026 el resultado es de 16 archivos y 30,040,469 registros.
 
 ## Como ejecutar el analisis
 
