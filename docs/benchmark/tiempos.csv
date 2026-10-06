@@ -1,0 +1,241 @@
+escala,filas,consulta,fuente,repeticion,segundos
+1 mes,3765161,b1_conteo_mensual,parquet,1,0.1807
+1 mes,3765161,b1_conteo_mensual,tabla,1,0.0249
+1 mes,3765161,b1_conteo_mensual,tabla,2,0.0279
+1 mes,3765161,b1_conteo_mensual,parquet,2,0.1305
+1 mes,3765161,b1_conteo_mensual,parquet,3,0.1284
+1 mes,3765161,b1_conteo_mensual,tabla,3,0.0272
+1 mes,3765161,b1_conteo_mensual,tabla,4,0.0311
+1 mes,3765161,b1_conteo_mensual,parquet,4,0.1381
+1 mes,3765161,b1_conteo_mensual,parquet,5,0.1375
+1 mes,3765161,b1_conteo_mensual,tabla,5,0.0262
+1 mes,3765161,b2_perfil_horario,parquet,1,0.1429
+1 mes,3765161,b2_perfil_horario,tabla,1,0.0125
+1 mes,3765161,b2_perfil_horario,tabla,2,0.0332
+1 mes,3765161,b2_perfil_horario,parquet,2,0.1456
+1 mes,3765161,b2_perfil_horario,parquet,3,0.1513
+1 mes,3765161,b2_perfil_horario,tabla,3,0.0172
+1 mes,3765161,b2_perfil_horario,tabla,4,0.0191
+1 mes,3765161,b2_perfil_horario,parquet,4,0.1545
+1 mes,3765161,b2_perfil_horario,parquet,5,0.1483
+1 mes,3765161,b2_perfil_horario,tabla,5,0.0144
+1 mes,3765161,b3_pago_propina,parquet,1,0.1002
+1 mes,3765161,b3_pago_propina,tabla,1,0.0189
+1 mes,3765161,b3_pago_propina,tabla,2,0.0221
+1 mes,3765161,b3_pago_propina,parquet,2,0.1057
+1 mes,3765161,b3_pago_propina,parquet,3,0.1172
+1 mes,3765161,b3_pago_propina,tabla,3,0.0213
+1 mes,3765161,b3_pago_propina,tabla,4,0.0231
+1 mes,3765161,b3_pago_propina,parquet,4,0.1091
+1 mes,3765161,b3_pago_propina,parquet,5,0.0997
+1 mes,3765161,b3_pago_propina,tabla,5,0.0203
+1 mes,3765161,b4_top_zonas,parquet,1,0.0858
+1 mes,3765161,b4_top_zonas,tabla,1,0.0456
+1 mes,3765161,b4_top_zonas,tabla,2,0.0162
+1 mes,3765161,b4_top_zonas,parquet,2,0.079
+1 mes,3765161,b4_top_zonas,parquet,3,0.0875
+1 mes,3765161,b4_top_zonas,tabla,3,0.0153
+1 mes,3765161,b4_top_zonas,tabla,4,0.0186
+1 mes,3765161,b4_top_zonas,parquet,4,0.0854
+1 mes,3765161,b4_top_zonas,parquet,5,0.0908
+1 mes,3765161,b4_top_zonas,tabla,5,0.0171
+1 mes,3765161,b5_percentiles,parquet,1,0.4348
+1 mes,3765161,b5_percentiles,tabla,1,0.3214
+1 mes,3765161,b5_percentiles,tabla,2,0.3815
+1 mes,3765161,b5_percentiles,parquet,2,0.3776
+1 mes,3765161,b5_percentiles,parquet,3,0.4019
+1 mes,3765161,b5_percentiles,tabla,3,0.2467
+1 mes,3765161,b5_percentiles,tabla,4,0.295
+1 mes,3765161,b5_percentiles,parquet,4,0.351
+1 mes,3765161,b5_percentiles,parquet,5,0.3783
+1 mes,3765161,b5_percentiles,tabla,5,0.3011
+1 mes,3765161,b6_filtro_selectivo,parquet,1,0.0913
+1 mes,3765161,b6_filtro_selectivo,tabla,1,0.0029
+1 mes,3765161,b6_filtro_selectivo,tabla,2,0.0036
+1 mes,3765161,b6_filtro_selectivo,parquet,2,0.0883
+1 mes,3765161,b6_filtro_selectivo,parquet,3,0.0886
+1 mes,3765161,b6_filtro_selectivo,tabla,3,0.005
+1 mes,3765161,b6_filtro_selectivo,tabla,4,0.0098
+1 mes,3765161,b6_filtro_selectivo,parquet,4,0.0872
+1 mes,3765161,b6_filtro_selectivo,parquet,5,0.0999
+1 mes,3765161,b6_filtro_selectivo,tabla,5,0.004
+2026,30040469,b1_conteo_mensual,parquet,1,0.4912
+2026,30040469,b1_conteo_mensual,tabla,1,0.1761
+2026,30040469,b1_conteo_mensual,tabla,2,0.1944
+2026,30040469,b1_conteo_mensual,parquet,2,0.5777
+2026,30040469,b1_conteo_mensual,parquet,3,0.5512
+2026,30040469,b1_conteo_mensual,tabla,3,0.1856
+2026,30040469,b1_conteo_mensual,tabla,4,0.174
+2026,30040469,b1_conteo_mensual,parquet,4,0.7117
+2026,30040469,b1_conteo_mensual,parquet,5,0.4911
+2026,30040469,b1_conteo_mensual,tabla,5,0.1844
+2026,30040469,b2_perfil_horario,parquet,1,0.6404
+2026,30040469,b2_perfil_horario,tabla,1,0.1001
+2026,30040469,b2_perfil_horario,tabla,2,0.0983
+2026,30040469,b2_perfil_horario,parquet,2,0.6513
+2026,30040469,b2_perfil_horario,parquet,3,0.6645
+2026,30040469,b2_perfil_horario,tabla,3,0.0936
+2026,30040469,b2_perfil_horario,tabla,4,0.0907
+2026,30040469,b2_perfil_horario,parquet,4,0.6711
+2026,30040469,b2_perfil_horario,parquet,5,0.7651
+2026,30040469,b2_perfil_horario,tabla,5,0.1051
+2026,30040469,b3_pago_propina,parquet,1,0.4281
+2026,30040469,b3_pago_propina,tabla,1,0.1089
+2026,30040469,b3_pago_propina,tabla,2,0.1082
+2026,30040469,b3_pago_propina,parquet,2,0.4077
+2026,30040469,b3_pago_propina,parquet,3,0.4036
+2026,30040469,b3_pago_propina,tabla,3,0.1042
+2026,30040469,b3_pago_propina,tabla,4,0.1063
+2026,30040469,b3_pago_propina,parquet,4,0.4013
+2026,30040469,b3_pago_propina,parquet,5,0.3849
+2026,30040469,b3_pago_propina,tabla,5,0.1103
+2026,30040469,b4_top_zonas,parquet,1,0.2623
+2026,30040469,b4_top_zonas,tabla,1,0.1025
+2026,30040469,b4_top_zonas,tabla,2,0.0884
+2026,30040469,b4_top_zonas,parquet,2,0.2282
+2026,30040469,b4_top_zonas,parquet,3,0.2624
+2026,30040469,b4_top_zonas,tabla,3,0.0936
+2026,30040469,b4_top_zonas,tabla,4,0.0878
+2026,30040469,b4_top_zonas,parquet,4,0.2311
+2026,30040469,b4_top_zonas,parquet,5,0.2458
+2026,30040469,b4_top_zonas,tabla,5,0.0977
+2026,30040469,b5_percentiles,parquet,1,3.1521
+2026,30040469,b5_percentiles,tabla,1,2.4978
+2026,30040469,b5_percentiles,tabla,2,2.5736
+2026,30040469,b5_percentiles,parquet,2,2.9206
+2026,30040469,b5_percentiles,parquet,3,2.6481
+2026,30040469,b5_percentiles,tabla,3,2.7866
+2026,30040469,b5_percentiles,tabla,4,2.5832
+2026,30040469,b5_percentiles,parquet,4,3.1955
+2026,30040469,b5_percentiles,parquet,5,2.9171
+2026,30040469,b5_percentiles,tabla,5,2.506
+2026,30040469,b6_filtro_selectivo,parquet,1,0.2018
+2026,30040469,b6_filtro_selectivo,tabla,1,0.0031
+2026,30040469,b6_filtro_selectivo,tabla,2,0.0062
+2026,30040469,b6_filtro_selectivo,parquet,2,0.2084
+2026,30040469,b6_filtro_selectivo,parquet,3,0.2124
+2026,30040469,b6_filtro_selectivo,tabla,3,0.003
+2026,30040469,b6_filtro_selectivo,tabla,4,0.0029
+2026,30040469,b6_filtro_selectivo,parquet,4,0.2046
+2026,30040469,b6_filtro_selectivo,parquet,5,0.2101
+2026,30040469,b6_filtro_selectivo,tabla,5,0.0036
+2024+2026,71870407,b1_conteo_mensual,parquet,1,1.0474
+2024+2026,71870407,b1_conteo_mensual,tabla,1,0.3447
+2024+2026,71870407,b1_conteo_mensual,tabla,2,0.3538
+2024+2026,71870407,b1_conteo_mensual,parquet,2,1.0206
+2024+2026,71870407,b1_conteo_mensual,parquet,3,0.9807
+2024+2026,71870407,b1_conteo_mensual,tabla,3,0.3492
+2024+2026,71870407,b1_conteo_mensual,tabla,4,0.3455
+2024+2026,71870407,b1_conteo_mensual,parquet,4,1.0962
+2024+2026,71870407,b1_conteo_mensual,parquet,5,1.0323
+2024+2026,71870407,b1_conteo_mensual,tabla,5,0.4147
+2024+2026,71870407,b2_perfil_horario,parquet,1,1.6252
+2024+2026,71870407,b2_perfil_horario,tabla,1,0.2272
+2024+2026,71870407,b2_perfil_horario,tabla,2,0.2436
+2024+2026,71870407,b2_perfil_horario,parquet,2,2.0609
+2024+2026,71870407,b2_perfil_horario,parquet,3,1.7633
+2024+2026,71870407,b2_perfil_horario,tabla,3,0.2437
+2024+2026,71870407,b2_perfil_horario,tabla,4,0.2242
+2024+2026,71870407,b2_perfil_horario,parquet,4,1.563
+2024+2026,71870407,b2_perfil_horario,parquet,5,1.532
+2024+2026,71870407,b2_perfil_horario,tabla,5,0.2285
+2024+2026,71870407,b3_pago_propina,parquet,1,0.8008
+2024+2026,71870407,b3_pago_propina,tabla,1,0.2459
+2024+2026,71870407,b3_pago_propina,tabla,2,0.2491
+2024+2026,71870407,b3_pago_propina,parquet,2,0.7794
+2024+2026,71870407,b3_pago_propina,parquet,3,0.7556
+2024+2026,71870407,b3_pago_propina,tabla,3,0.2603
+2024+2026,71870407,b3_pago_propina,tabla,4,0.2724
+2024+2026,71870407,b3_pago_propina,parquet,4,0.7813
+2024+2026,71870407,b3_pago_propina,parquet,5,0.7727
+2024+2026,71870407,b3_pago_propina,tabla,5,0.2316
+2024+2026,71870407,b4_top_zonas,parquet,1,0.6231
+2024+2026,71870407,b4_top_zonas,tabla,1,0.1761
+2024+2026,71870407,b4_top_zonas,tabla,2,0.1759
+2024+2026,71870407,b4_top_zonas,parquet,2,0.678
+2024+2026,71870407,b4_top_zonas,parquet,3,0.6284
+2024+2026,71870407,b4_top_zonas,tabla,3,0.181
+2024+2026,71870407,b4_top_zonas,tabla,4,0.1781
+2024+2026,71870407,b4_top_zonas,parquet,4,0.6096
+2024+2026,71870407,b4_top_zonas,parquet,5,0.639
+2024+2026,71870407,b4_top_zonas,tabla,5,0.1778
+2024+2026,71870407,b5_percentiles,parquet,1,6.7686
+2024+2026,71870407,b5_percentiles,tabla,1,7.2128
+2024+2026,71870407,b5_percentiles,tabla,2,6.1578
+2024+2026,71870407,b5_percentiles,parquet,2,6.6418
+2024+2026,71870407,b5_percentiles,parquet,3,7.1522
+2024+2026,71870407,b5_percentiles,tabla,3,6.2903
+2024+2026,71870407,b5_percentiles,tabla,4,6.3793
+2024+2026,71870407,b5_percentiles,parquet,4,7.0813
+2024+2026,71870407,b5_percentiles,parquet,5,7.1656
+2024+2026,71870407,b5_percentiles,tabla,5,6.8854
+2024+2026,71870407,b6_filtro_selectivo,parquet,1,0.5597
+2024+2026,71870407,b6_filtro_selectivo,tabla,1,0.0042
+2024+2026,71870407,b6_filtro_selectivo,tabla,2,0.0034
+2024+2026,71870407,b6_filtro_selectivo,parquet,2,0.5056
+2024+2026,71870407,b6_filtro_selectivo,parquet,3,0.494
+2024+2026,71870407,b6_filtro_selectivo,tabla,3,0.0034
+2024+2026,71870407,b6_filtro_selectivo,tabla,4,0.0048
+2024+2026,71870407,b6_filtro_selectivo,parquet,4,0.5102
+2024+2026,71870407,b6_filtro_selectivo,parquet,5,0.5173
+2024+2026,71870407,b6_filtro_selectivo,tabla,5,0.0036
+2024-2026,121184384,b1_conteo_mensual,parquet,1,1.7775
+2024-2026,121184384,b1_conteo_mensual,tabla,1,0.6474
+2024-2026,121184384,b1_conteo_mensual,tabla,2,0.658
+2024-2026,121184384,b1_conteo_mensual,parquet,2,1.8883
+2024-2026,121184384,b1_conteo_mensual,parquet,3,1.9492
+2024-2026,121184384,b1_conteo_mensual,tabla,3,0.6316
+2024-2026,121184384,b1_conteo_mensual,tabla,4,0.6881
+2024-2026,121184384,b1_conteo_mensual,parquet,4,1.783
+2024-2026,121184384,b1_conteo_mensual,parquet,5,1.7336
+2024-2026,121184384,b1_conteo_mensual,tabla,5,0.7164
+2024-2026,121184384,b2_perfil_horario,parquet,1,2.7082
+2024-2026,121184384,b2_perfil_horario,tabla,1,0.454
+2024-2026,121184384,b2_perfil_horario,tabla,2,0.4341
+2024-2026,121184384,b2_perfil_horario,parquet,2,2.572
+2024-2026,121184384,b2_perfil_horario,parquet,3,2.656
+2024-2026,121184384,b2_perfil_horario,tabla,3,0.4069
+2024-2026,121184384,b2_perfil_horario,tabla,4,0.4018
+2024-2026,121184384,b2_perfil_horario,parquet,4,2.6797
+2024-2026,121184384,b2_perfil_horario,parquet,5,2.5988
+2024-2026,121184384,b2_perfil_horario,tabla,5,0.3907
+2024-2026,121184384,b3_pago_propina,parquet,1,1.2842
+2024-2026,121184384,b3_pago_propina,tabla,1,0.4275
+2024-2026,121184384,b3_pago_propina,tabla,2,0.3745
+2024-2026,121184384,b3_pago_propina,parquet,2,1.2108
+2024-2026,121184384,b3_pago_propina,parquet,3,1.2671
+2024-2026,121184384,b3_pago_propina,tabla,3,0.4249
+2024-2026,121184384,b3_pago_propina,tabla,4,0.4474
+2024-2026,121184384,b3_pago_propina,parquet,4,1.484
+2024-2026,121184384,b3_pago_propina,parquet,5,1.3011
+2024-2026,121184384,b3_pago_propina,tabla,5,0.4233
+2024-2026,121184384,b4_top_zonas,parquet,1,1.3434
+2024-2026,121184384,b4_top_zonas,tabla,1,0.3363
+2024-2026,121184384,b4_top_zonas,tabla,2,0.4458
+2024-2026,121184384,b4_top_zonas,parquet,2,1.183
+2024-2026,121184384,b4_top_zonas,parquet,3,1.0873
+2024-2026,121184384,b4_top_zonas,tabla,3,0.2935
+2024-2026,121184384,b4_top_zonas,tabla,4,0.3102
+2024-2026,121184384,b4_top_zonas,parquet,4,1.1462
+2024-2026,121184384,b4_top_zonas,parquet,5,1.0351
+2024-2026,121184384,b4_top_zonas,tabla,5,0.2774
+2024-2026,121184384,b5_percentiles,parquet,1,12.5405
+2024-2026,121184384,b5_percentiles,tabla,1,12.6395
+2024-2026,121184384,b5_percentiles,tabla,2,12.8362
+2024-2026,121184384,b5_percentiles,parquet,2,12.1368
+2024-2026,121184384,b5_percentiles,parquet,3,14.3391
+2024-2026,121184384,b5_percentiles,tabla,3,13.2362
+2024-2026,121184384,b5_percentiles,tabla,4,10.948
+2024-2026,121184384,b5_percentiles,parquet,4,13.9157
+2024-2026,121184384,b5_percentiles,parquet,5,14.1841
+2024-2026,121184384,b5_percentiles,tabla,5,12.259
+2024-2026,121184384,b6_filtro_selectivo,parquet,1,0.6954
+2024-2026,121184384,b6_filtro_selectivo,tabla,1,0.0041
+2024-2026,121184384,b6_filtro_selectivo,tabla,2,0.0032
+2024-2026,121184384,b6_filtro_selectivo,parquet,2,0.6574
+2024-2026,121184384,b6_filtro_selectivo,parquet,3,0.6724
+2024-2026,121184384,b6_filtro_selectivo,tabla,3,0.005
+2024-2026,121184384,b6_filtro_selectivo,tabla,4,0.0036
+2024-2026,121184384,b6_filtro_selectivo,parquet,4,0.6697
+2024-2026,121184384,b6_filtro_selectivo,parquet,5,0.6674
+2024-2026,121184384,b6_filtro_selectivo,tabla,5,0.0039

@@ -157,11 +157,12 @@ Para detener el ambiente sin borrar nada:
 
 El script scripts/download_data.py descarga los Parquet mensuales de taxis amarillos y verdes desde la TLC:
 
-    docker compose exec lab python scripts/download_data.py                  # solo 2026
-    docker compose exec lab python scripts/download_data.py --taxi green
+    docker compose exec lab python scripts/download_data.py                  # 2024 y 2026
+    docker compose exec lab python scripts/download_data.py --anio 2026      # solo 2026
+    docker compose exec lab python scripts/download_data.py --anio 2024 2026 --taxi green
     docker compose exec lab python scripts/download_data.py --verificar      # valida sin descargar
 
-Los archivos quedan en data/raw/tipo/año/nombre-original.parquet y el catálogo de zonas en data/raw/zones/taxi_zone_lookup.csv. Los 16 archivos de 2026 ocupan unos 0.5 GB.
+Los archivos quedan en data/raw/tipo/año/nombre-original.parquet y el catálogo de zonas en data/raw/zones/taxi_zone_lookup.csv. Los archivos de 2024 y 2026 ocupan unos 1.2 GB.
 
 Cambios realizados al script original:
 
@@ -173,7 +174,7 @@ Cambios realizados al script original:
 - Se descarga el catálogo de zonas de la TLC.
 - Se mantuvo la regla de no volver a descargar archivos existentes y la escritura atómica con archivo .part.
 
-Cómo se verifica que la descarga está completa: ningún mes publicado queda sin descargar, no hay meses faltantes en medio, todos los tamaños coinciden con el servidor y todos los archivos abren como Parquet. Las bitácoras de cada ejecución están en docs/logs. Con datos hasta agosto de 2026 el resultado es de 16 archivos y 30,040,469 registros.
+Cómo se verifica que la descarga está completa: ningún mes publicado queda sin descargar, no hay meses faltantes en medio, todos los tamaños coinciden con el servidor y todos los archivos abren como Parquet. Las bitácoras de cada ejecución están en docs/logs. Con datos hasta agosto de 2026 el resultado es de 40 archivos y 71,870,407 registros.
 
 ## Como ejecutar el analisis
 
@@ -181,7 +182,16 @@ Cómo se verifica que la descarga está completa: ningún mes publicado queda si
 
 ## Como reproducir los benchmarks
 
-<!-- TODO (Ejercicio 6) -->
+    docker compose exec lab python scripts/benchmark.py
+    docker compose exec lab python scripts/benchmark.py --repeticiones 3 --escala "1 mes" 2026
+
+Para cada escala de datos, un mes, 2026, 2024 más 2026 y los tres años, el script materializa una tabla en data/processed/benchmark.duckdb, mide su costo de carga y ejecuta cada consulta de sql/benchmark cinco veces sobre Parquet y cinco sobre la tabla, alternando el orden. Tarda unos 10 minutos. Resultados:
+
+- docs/benchmark/tiempos.csv: una fila por ejecución
+- docs/benchmark/materializacion.csv: filas, segundos de carga y tamaños
+- docs/logs/benchmark.txt: resumen con medianas
+
+El notebook lee esos archivos en el ejercicio 6. Para que los regenere él mismo se cambia CORRER_BENCHMARK a True.
 
 ## Como generar los resultados principales
 

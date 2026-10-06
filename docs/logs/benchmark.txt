@@ -1,0 +1,34 @@
+
+=== 1 mes: 3,765,161 filas, carga 1.9 s ===
+  b1_conteo_mensual      parquet   0.138 s   tabla   0.027 s
+  b2_perfil_horario      parquet   0.148 s   tabla   0.017 s
+  b3_pago_propina        parquet   0.106 s   tabla   0.021 s
+  b4_top_zonas           parquet   0.086 s   tabla   0.017 s
+  b5_percentiles         parquet   0.378 s   tabla   0.301 s
+  b6_filtro_selectivo    parquet   0.089 s   tabla   0.004 s
+
+=== 2026: 30,040,469 filas, carga 8.9 s ===
+  b1_conteo_mensual      parquet   0.551 s   tabla   0.184 s
+  b2_perfil_horario      parquet   0.664 s   tabla   0.098 s
+  b3_pago_propina        parquet   0.404 s   tabla   0.108 s
+  b4_top_zonas           parquet   0.246 s   tabla   0.094 s
+  b5_percentiles         parquet   2.921 s   tabla   2.574 s
+  b6_filtro_selectivo    parquet   0.208 s   tabla   0.003 s
+
+=== 2024+2026: 71,870,407 filas, carga 17.1 s ===
+  b1_conteo_mensual      parquet   1.032 s   tabla   0.349 s
+  b2_perfil_horario      parquet   1.625 s   tabla   0.229 s
+  b3_pago_propina        parquet   0.779 s   tabla   0.249 s
+  b4_top_zonas           parquet   0.628 s   tabla   0.178 s
+  b5_percentiles         parquet   7.081 s   tabla   6.379 s
+  b6_filtro_selectivo    parquet   0.510 s   tabla   0.004 s
+
+=== 2024-2026: 121,184,384 filas, carga 31.3 s ===
+  b1_conteo_mensual      parquet   1.783 s   tabla   0.658 s
+  b2_perfil_horario      parquet   2.656 s   tabla   0.407 s
+  b3_pago_propina        parquet   1.284 s   tabla   0.425 s
+  b4_top_zonas           parquet   1.146 s   tabla   0.310 s
+  b5_percentiles         parquet  13.916 s   tabla  12.639 s
+  b6_filtro_selectivo    parquet   0.670 s   tabla   0.004 s
+
+Resultados en docs/benchmark/
