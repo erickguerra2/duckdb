@@ -157,12 +157,12 @@ Para detener el ambiente sin borrar nada:
 
 El script scripts/download_data.py descarga los Parquet mensuales de taxis amarillos y verdes desde la TLC:
 
-    docker compose exec lab python scripts/download_data.py                  # 2024 y 2026
+    docker compose exec lab python scripts/download_data.py                  # 2024, 2025 y 2026
     docker compose exec lab python scripts/download_data.py --anio 2026      # solo 2026
     docker compose exec lab python scripts/download_data.py --anio 2024 2026 --taxi green
     docker compose exec lab python scripts/download_data.py --verificar      # valida sin descargar
 
-Los archivos quedan en data/raw/tipo/año/nombre-original.parquet y el catálogo de zonas en data/raw/zones/taxi_zone_lookup.csv. Los archivos de 2024 y 2026 ocupan unos 1.2 GB.
+Los archivos quedan en data/raw/tipo/año/nombre-original.parquet y el catálogo de zonas en data/raw/zones/taxi_zone_lookup.csv. Son unos 2 GB para los tres años.
 
 Cambios realizados al script original:
 
@@ -174,11 +174,47 @@ Cambios realizados al script original:
 - Se descarga el catálogo de zonas de la TLC.
 - Se mantuvo la regla de no volver a descargar archivos existentes y la escritura atómica con archivo .part.
 
-Cómo se verifica que la descarga está completa: ningún mes publicado queda sin descargar, no hay meses faltantes en medio, todos los tamaños coinciden con el servidor y todos los archivos abren como Parquet. Las bitácoras de cada ejecución están en docs/logs. Con datos hasta agosto de 2026 el resultado es de 40 archivos y 71,870,407 registros.
+Cómo se verifica que la descarga está completa: ningún mes publicado queda sin descargar, no hay meses faltantes en medio, todos los tamaños coinciden con el servidor y todos los archivos abren como Parquet. Las bitácoras de cada ejecución están en docs/logs. Con datos hasta agosto de 2026 el resultado es de 64 archivos y 121,184,384 registros.
+
+La incorporación por etapas del laboratorio se reproduce así:
+
+    docker compose exec lab python scripts/download_data.py --anio 2026          # ejercicio 2
+    docker compose exec lab python scripts/download_data.py --anio 2024 2026     # ejercicio 5
+    docker compose exec lab python scripts/download_data.py                      # ejercicio 8
+
+En cada ejecución los archivos ya presentes aparecen como ya existe, se omite.
 
 ## Como ejecutar el analisis
 
-<!-- TODO -->
+El análisis completo está en notebooks/Lab8_DuckDB.ipynb y requiere haber descargado los datos.
+
+Opción interactiva: abrir http://127.0.0.1:8888, entrar a notebooks y ejecutar todas las celdas.
+
+Opción por línea de comandos, que ejecuta y guarda el notebook con sus resultados:
+
+    docker compose exec -w /workspace/notebooks lab jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 Lab8_DuckDB.ipynb
+
+La ejecución completa toma alrededor de 10 minutos. El notebook:
+
+- vuelve a ejecutar el script de descarga en cada etapa, que solo valida porque los archivos ya existen;
+- guarda cada consulta en sql/ejercicio3, sql/ejercicio4, sql/ejercicio5 y sql/ejercicio8 con su objetivo y fuente;
+- construye data/processed/taxi.duckdb con scripts/taxi_db.py;
+- calcula los indicadores, publica el tablero de Metabase y guarda figuras en docs/figuras;
+- exporta el catálogo de consultas a docs/consultas.md.
+
+Organización del SQL:
+
+| Archivo o carpeta | Contenido |
+|---|---|
+| sql/01_vistas.sql | Vistas sobre Parquet: esquema común, unión de amarillos y verdes, reglas de calidad |
+| sql/02_materializar.sql | Creación de las tablas zonas y viajes_tbl y de la vista viajes_limpios_tbl |
+| sql/ejercicio3 a sql/ejercicio8 | Consultas de exploración, análisis y validación de cada ejercicio |
+| sql/benchmark | Las seis consultas del benchmark, con {fuente} como marcador |
+| sql/indicadores | Un archivo por indicador del tablero, con encabezado para Metabase |
+
+Transformaciones registradas: todas están en sql/01_vistas.sql. Se renombran las fechas de ambos tipos a pickup y dropoff, se homologan nombres y tipos, se agregan taxi, año y mes del archivo, y se clasifica cada registro con una columna calidad. Los Parquet nunca se modifican.
+
+DuckDB usa como máximo 6 GB de memoria en la materialización, el benchmark y el notebook. Se puede cambiar con la variable de entorno DUCKDB_MEMORY.
 
 ## Como reproducir los benchmarks
 
@@ -199,13 +235,19 @@ El notebook lee esos archivos en el ejercicio 6. Para que los regenere él mismo
 
         docker compose exec lab python scripts/taxi_db.py
 
-   Crea data/processed/taxi.duckdb con las tablas viajes_tbl y zonas y la vista viajes_limpios_tbl. Con 2024 y 2026 son unos 72 millones de filas.
+   Crea data/processed/taxi.duckdb con las tablas viajes_tbl y zonas y la vista viajes_limpios_tbl. Con los tres años son unos 121 millones de filas.
 
 2. Publicar el tablero en Metabase:
 
         docker compose exec lab python scripts/metabase_dashboard.py
 
-   El script crea el usuario administrador local, registra la base, crea una pregunta por cada archivo de sql/indicadores y arma el tablero Taxis NYC. Imprime el enlace al tablero y un enlace público. Credenciales por defecto: usuario lab8@example.com y contraseña Lab8-DuckDB-2026, que se pueden cambiar con MB_EMAIL y MB_PASSWORD.
+   El script crea el usuario administrador local, registra la base, crea una pregunta por cada archivo de sql/indicadores y arma el tablero Taxis NYC 2024-2026. Imprime el enlace al tablero y un enlace público. Credenciales por defecto: usuario lab8@example.com y contraseña Lab8-DuckDB-2026, que se pueden cambiar con MB_EMAIL y MB_PASSWORD.
+
+3. Opcional, capturar el tablero como imagen desde la computadora anfitriona con Edge o Chrome:
+
+        python scripts/metabase_dashboard.py --url http://127.0.0.1:3000 --capturas
+
+   Requiere Python con requests. La imagen queda en docs/figuras/tablero_metabase.png.
 
 Metabase abre una base DuckDB en memoria que adjunta taxi.duckdb en modo solo lectura. Así otros procesos pueden seguir leyendo la base, y cuando se reconstruye basta con volver a ejecutar el paso 2 para que Metabase use la versión nueva sin reiniciar el servicio.
 
@@ -214,5 +256,8 @@ Evidencia generada:
 | Archivo | Contenido |
 |---|---|
 | docs/figuras/ej7_tablero_2024_2026.png | Tablero con 2024 y 2026 |
-| docs/figuras/ej4 y ej6 | Gráficos del análisis exploratorio y del benchmark |
+| docs/figuras/ej8_tablero_2024_2026.png | Tablero con los tres años |
+| docs/figuras/tablero_metabase.png | Captura del tablero en Metabase |
+| docs/figuras/ej4, ej6 y ej8 | Gráficos del análisis exploratorio, del benchmark y de la evolución |
+| docs/consultas.md | Catálogo de todas las consultas con objetivo, fuente, filas y tiempo |
 | docs/manifest_descargas.csv | Validación de cada archivo descargado |
