@@ -195,4 +195,24 @@ El notebook lee esos archivos en el ejercicio 6. Para que los regenere él mismo
 
 ## Como generar los resultados principales
 
-<!-- TODO -->
+1. Materializar la base con todos los años descargados:
+
+        docker compose exec lab python scripts/taxi_db.py
+
+   Crea data/processed/taxi.duckdb con las tablas viajes_tbl y zonas y la vista viajes_limpios_tbl. Con 2024 y 2026 son unos 72 millones de filas.
+
+2. Publicar el tablero en Metabase:
+
+        docker compose exec lab python scripts/metabase_dashboard.py
+
+   El script crea el usuario administrador local, registra la base, crea una pregunta por cada archivo de sql/indicadores y arma el tablero Taxis NYC. Imprime el enlace al tablero y un enlace público. Credenciales por defecto: usuario lab8@example.com y contraseña Lab8-DuckDB-2026, que se pueden cambiar con MB_EMAIL y MB_PASSWORD.
+
+Metabase abre una base DuckDB en memoria que adjunta taxi.duckdb en modo solo lectura. Así otros procesos pueden seguir leyendo la base, y cuando se reconstruye basta con volver a ejecutar el paso 2 para que Metabase use la versión nueva sin reiniciar el servicio.
+
+Evidencia generada:
+
+| Archivo | Contenido |
+|---|---|
+| docs/figuras/ej7_tablero_2024_2026.png | Tablero con 2024 y 2026 |
+| docs/figuras/ej4 y ej6 | Gráficos del análisis exploratorio y del benchmark |
+| docs/manifest_descargas.csv | Validación de cada archivo descargado |
